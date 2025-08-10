@@ -108,6 +108,15 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Lights"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0860a12-f2e7-46e1-b7c7-b00eb29a9fa2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -143,6 +152,28 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3781e05-6fb3-475c-be8e-d2d878045bc6"",
+                    ""path"": ""<XRController>{RightHand}/{SecondaryButton}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5376c5b8-2587-401f-a385-d7a3202f769a"",
+                    ""path"": ""<Keyboard>/#(.)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -153,6 +184,7 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
+        m_Player_Lights = m_Player.FindAction("Lights", throwIfNotFound: true);
     }
 
     ~@Team3_inputs()
@@ -235,6 +267,7 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Select;
     private readonly InputAction m_Player_Rotate;
+    private readonly InputAction m_Player_Lights;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -254,6 +287,10 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Rotate".
         /// </summary>
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Lights".
+        /// </summary>
+        public InputAction @Lights => m_Wrapper.m_Player_Lights;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -286,6 +323,9 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @Lights.started += instance.OnLights;
+            @Lights.performed += instance.OnLights;
+            @Lights.canceled += instance.OnLights;
         }
 
         /// <summary>
@@ -303,6 +343,9 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @Lights.started -= instance.OnLights;
+            @Lights.performed -= instance.OnLights;
+            @Lights.canceled -= instance.OnLights;
         }
 
         /// <summary>
@@ -357,5 +400,12 @@ public partial class @Team3_inputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRotate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Lights" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLights(InputAction.CallbackContext context);
     }
 }

@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Lights",
+                    "type": "Button",
+                    "id": "c0860a12-f2e7-46e1-b7c7-b00eb29a9fa2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -55,6 +64,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3781e05-6fb3-475c-be8e-d2d878045bc6",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5376c5b8-2587-401f-a385-d7a3202f769a",
+                    "path": "<Keyboard>/#(.)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lights",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
