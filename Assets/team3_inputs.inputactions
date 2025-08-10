@@ -1,0 +1,65 @@
+{
+    "name": "team3_inputs",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "ac960699-9a44-4eeb-95c6-c36b55df4223",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "3e54e7c1-725b-49bf-9486-420fcd0e2e39",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "49854086-8e36-48a6-b34a-4b1fcb314ead",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "64e4a0ed-1e72-4eaf-8476-bc51395ce858",
+                    "path": "<OculusTouchController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f5b3e99-8cb4-4850-a57c-63cc9b22c279",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8f2a32e-965e-4d0f-bfce-6124a140dd6d",
+                    "path": "<OculusTouchController>/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
